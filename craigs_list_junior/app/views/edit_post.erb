@@ -1,0 +1,32 @@
+
+<div class ="container">
+
+<form style="clear:left" action = "/updated" method="post">
+
+<h1>Update Post!</h1>
+
+<label for="item">Title</label>
+
+<input type="text" name="post[item]" id="item" value = "<%= @post.first.item %>"><br/>
+
+<label for="description">Description</label>
+
+<input type="text" name="post[description]" id="description" value = "<%= @post.first.description %>"><br/>
+
+<label for="contact_info">Contact Info</label>
+
+<input type="text" name="post[contact_info]" id="contact_info" value = "<%= @post.first.contact_info%>"><br/>
+
+<label for="price">Price</label>
+
+<input type="text" name="post[price]" id="price" value = "<%= @post.first.price %>"><br/>
+
+<input type="submit">
+
+</form>
+
+</div>
+
+<p style="float:left">If you ever want to edit this post, visit the following url:
+  <%= @key %>
+</p>

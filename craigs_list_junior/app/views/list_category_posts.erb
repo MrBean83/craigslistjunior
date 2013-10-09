@@ -1,0 +1,18 @@
+<div class="container">
+  <h1> <%= @category %> </h1>
+  <% category = Category.where(name: @category).first %>
+  <% id = category.id %>
+  
+  <% posts = Post.where(category_id: id) %>
+
+  <%posts.each do |t| %>
+  <div class ="post">
+ <span class ="label">Item</span> <%= t.item %><br/>
+   <span class ="label">Description</span><%= t.description %><br/>
+    <span class ="label">Price</span><%= t.price %><br/>
+     <span class ="label">Contact Info</span><%= t.contact_info%><br/><br/>
+   </div>
+  <% end %>
+
+
+</div>

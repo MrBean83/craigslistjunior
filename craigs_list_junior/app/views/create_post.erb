@@ -1,0 +1,39 @@
+<div class="container">
+<h1>Post something new!</h1>
+
+<form action = "/new_post" method="post">
+  <label for="category">Category</label>
+
+    <select name = "post[category_id]">
+
+      <% categories = Category.all %>
+
+      <% categories.each do |t| %>
+
+      <option value= <%= t.id %> ><%= t.name %></option>
+      <% end %>
+
+    </select>
+<label for="item">Title</label>
+
+<input type="text" name="post[item]" id="item"><br/>
+
+<label for="description">Description</label>
+
+<input type="text" name="post[description]" id="description"><br/>
+
+<label for="contact_info">Contact Info</label>
+
+<input type="text" name="post[contact_info]" id="contact_info"><br/>
+
+<label for="price">Price</label>
+
+<input type="text" name="post[price]" id="price"><br/>
+
+<input type="text" name="post[key]" id="key" style="display:none" value = "<%=SecureRandom.hex %>" />
+
+<input type="submit">
+
+</form>
+
+</div>
